@@ -7,7 +7,7 @@ function getURLParameter(name) {
 $(document).ready(function () {
     var ballot_id = getURLParameter('ballot_id');
     if (ballot_id != 'null') {
-	$("#ballot_name").html("Sample Ballot " + ballot_id);
+	$("#ballot_number").text(ballot_id);
     } else {
 	$(".unsubmitted").hide();
 	$(".submitted").show();

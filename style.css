@@ -23,6 +23,10 @@ body {
     padding-right: 10px;
 }
 
+li {
+    list-style-type: none;
+}
+
 .submitted {
     display: none;
     margin-top: 60px;
