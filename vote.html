@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <title>Student Voting Center</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js">
+    </script>
+    <script type="text/javascript" src="javascript.js">
+    </script>
+  </head>
+  <body>
+    <div class="navigation">
+      <a href="index.html">Home</a>
+      <a href="open_ballots.html">Open Ballots/Vote</a>
+      <a href="closed_ballots.html">Closed Ballots/View</a>
+      <a href="logout.html">logout</a>
+    </div>
+    <div class="unsubmitted">
+      <h1 id="ballot_name">Sample Ballot</h1>
+      <p>Please select an option below to cast your vote:</p>
+      <form action="vote.html" onsubmit="javascript:confirm_vote()" id="ballot_form">
+	John Doe: <input type="radio" name="candidate" value="John Doe"><br />
+	John Does: <input type="radio" name="candidate" value="John Does"><br />
+	John Doesn't: <input type="radio" name="candidate" value="John Doesn't">
+	<br /><input type="submit" value="Cast Vote!" />
+      </form>
+    </div>
+    <div class="submitted">
+      Thank you for voting!
+    </div>
+  </body>
+</html>

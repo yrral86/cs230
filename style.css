@@ -22,3 +22,9 @@ body {
     padding-left: 10px;
     padding-right: 10px;
 }
+
+.submitted {
+    display: none;
+    margin-top: 60px;
+    text-align: center;
+}
