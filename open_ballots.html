@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <title>Student Voting Center</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js">
+    </script>
+    <script type="text/javascript" src="javascript.js">
+    </script>
+  </head>
+  <body>
+    <div class="navigation">
+      <a href="index.html">Home</a>
+      <a href="open_ballots.html">Open Ballots/Vote</a>
+      <a href="closed_ballots.html">Closed Ballots/View</a>
+      <a href="logout.html">logout</a>
+    </div>
+    <h1>Open Ballots</h1>
+    <p>Please select a ballot below to cast your vote:</p>
+    <table class="ballot_list">
+      <tr>
+	<th>Ballot Name</th>
+	<th>End Time</th>
+	<th>Actions</th>
+      </tr>
+      <tr>
+	<td>Sample Ballot 1</td>
+	<td>5/12/2013 11:59pm</td>
+	<td><a href="vote.html?ballot_id=1">Vote</a></td>
+      </tr>
+      <tr>
+	<td>Sample Ballot 2</td>
+	<td>5/19/2013 11:59pm</td>
+	<td><a href="vote.html?ballot_id=2">Vote</a></td>
+      </tr>
+    </table>
+  </body>
+</html>
