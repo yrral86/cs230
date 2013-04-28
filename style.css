@@ -43,6 +43,14 @@ a.student_logged {
     display: none;
 }
 
+a.hso_logged {
+    display: none;
+}
+
+a.ec_logged {
+    display: none;
+}
+
 a.any_logged {
     display: none;
 }
