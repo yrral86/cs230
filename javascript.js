@@ -101,6 +101,8 @@ function confirm_vote(ballot_id) {
     if (count != 2) {
 	alert("You have not completed the ballot");
 	success = false;
+    } else {
+	success = confirm("Are you sure you want to submit your ballot?");
     }
 
     return success;
