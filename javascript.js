@@ -189,3 +189,9 @@ function ac_select() {
     var b_id = getURLParameter('ballot_id');
     $('#ballot' + b_id).attr('selected', true);
 }
+
+function certify_election(ballot_id) {
+    $('.unsubmitted_ce').hide();
+    $('.submitted_ce').show();
+    return false;
+}

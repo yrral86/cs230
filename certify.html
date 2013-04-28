@@ -23,21 +23,46 @@
       <a class="not_logged" href="login.html">login</a>
       <a class="any_logged" href="logout.html">logout</a>
     </div>
-    <h1>Certify Election Results</h1>
-    <p>Please select an uncertified ballot below to certify:</p>
-    <table class="ballot_list">
-      <tr>
-	<th>Ballot Name</th>
-	<th>End Time</th>
-	<th>Total Votes</th>
-	<th>Actions</th>
-      </tr>
-      <tr>
-	<td>Sample Ballot 6</td>
-	<td>4/29/2013 11:59am</td>
-	<td>1569</td>
-	<td><a href="certify.html?ballot_id=6">Certify</a></td>
-      </tr>
-    </table>
+    <div class="unsubmitted_ce">
+      <h1>Certify Election Results</h1>
+      <p>Please review the list of votes below and certify and publish the election results.  Students should have no more votes than the number of races.</p>
+      <p>Races: 3</p>
+      <table class="vote_list">
+	<tr>
+	  <th>Student Name</th>
+	  <th>Votes</th>
+	</tr>
+	<tr>
+	  <td>Student 1</td>
+	  <td>2</td>
+	</tr>
+	<tr>
+	  <td>Student 2</td>
+	  <td>3</td>
+	</tr>
+	<tr>
+	  <td>Student 3</td>
+	  <td>3</td>
+	</tr>
+	<tr>
+	  <td>Student 4</td>
+	  <td>1</td>
+	</tr>
+	<tr>
+	  <td>Student 5</td>
+	  <td>2</td>
+	</tr>
+	<tr>
+	  <td>Student 6</td>
+	  <td>3</td>
+	</tr>
+      </table>
+      <form action="certify.html" onsubmit="return certify_election()">
+	<input type="submit" value="Certify Results" />
+      </form>
+    </div>
+    <div class="submitted_ce">
+      You have certified the results.  They are now viewable by the student body.
+    </div>
   </body>
 </html>

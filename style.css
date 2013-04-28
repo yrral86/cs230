@@ -59,6 +59,12 @@ li {
     text-align: center;
 }
 
+.submitted_ce {
+    display: none;
+    margin-top: 60px;
+    text-align: center;
+}
+
 .login_error {
     display: none;
     color: red;
