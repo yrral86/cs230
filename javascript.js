@@ -13,9 +13,25 @@ $(document).ready(function () {
 	$(".submitted").show();
     }
 
-    // fix links based on login status
+    // fix links based on login status and location
+    var location = document.location;
+    var index = /index\.html/.test(location);
+    var login = /login\.html/.test(location);
+
+
+    if (!index) {
+	show_all_links('a.home_link');
+    }
+
+    if (login) {
+	hide_all('a.not_logged');
+    }
+
     var role = $.cookie('role');
     if (role != null) {
+	if (login) {
+	    document.location = 'index.html';
+	}
 	show_all_links('a.any_logged');
 	hide_all('a.not_logged');
 	if (role == 'student') {
@@ -26,8 +42,7 @@ $(document).ready(function () {
 	    show_all_links('a.ec_logged');
 	}
     } else {
-	if (!/index\.html/.test(document.location) &&
-	    !/login\.html/.test(document.location)) {
+	if (!index && !login) {
 	    document.location = "login.html";
 	}
     }

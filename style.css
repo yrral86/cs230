@@ -39,6 +39,10 @@ li {
     margin: 10px;
 }
 
+a.home_link {
+    display: none;
+}
+
 a.student_logged {
     display: none;
 }
