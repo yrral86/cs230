@@ -19,7 +19,7 @@
     <div class="unsubmitted_ballot">
       <div id="ballot1" class="sample_ballot">
 	<h1>Sample Ballot 1</h1>
-	<form action="vote.html" onsubmit="javascript:confirm_vote()" id="ballot_form">
+	<form action="vote.html" onsubmit="return confirm_vote(1)" id="ballot_form1">
 	  <p>If you would like to vote for a party's candidate for each race, please select an option below:</p>
 	  Red: <input type="radio" name="party" value="Red" onclick="javascript:party_vote('red');"><br />
 	  Green: <input type="radio" name="party" value="Green" onclick="javascript:party_vote('green');"><br />
@@ -34,16 +34,22 @@
 	  Bill Doe (Green): <input class="green_party" type="radio" name="race2_candidate" value="Bill Doe"><br />
 	  Bill Does (Blue): <input class="blue_party" type="radio" name="race2_candidate" value="Bill Does"><br />
 	  Bill Doesn't (Red): <input class="red_party" type="radio" name="race2_candidate" value="Bill Doesn't"><br />
-	  <input type="submit" value="Cast Vote!" />
+	  <br /><input type="submit" value="Cast Vote!" />
 	</form>
       </div>
       <div id="ballot2" class="sample_ballot">
 	<h1>Sample Ballot 2</h1>
-	<p>Please select an option below to cast your vote:</p>
-	<form action="vote.html" onsubmit="javascript:confirm_vote()" id="ballot_form">
-	  John Doe: <input type="radio" name="candidate" value="John Doe"><br />
-	  John Does: <input type="radio" name="candidate" value="John Does"><br />
-	  John Doesn't: <input type="radio" name="candidate" value="John Doesn't">
+	<form action="vote.html" onsubmit="return confirm_vote(2)" id="ballot_form2">
+	  <p>Please select up to two options below to cast your votes for Board of Governors:</p>
+	  John Doe: <input id="option1" type="checkbox" name="race1_candidate" value="John Doe" onclick="javascript:limit_options(1)"><br />
+	  John Does: <input id="option2" type="checkbox" name="race1_candidate" value="John Does" onclick="javascript:limit_options(2)"><br />
+	  John Doesn't: <input id="option3" type="checkbox" name="race1_candidate" value="John Doesn't" onclick="javascript:limit_options(3)"><br />
+	  <br />
+	  <p>Please select an option below, or write in your choice to cast your vote for Secretary:</p>
+	  Bill Doe: <input id="radio1" class="green_party" type="radio" name="race2_candidate" value="Bill Doe" onchange="javascript:radio_or_text(1)"><br />
+	  Bill Does: <input id="radio2" class="blue_party" type="radio" name="race2_candidate" value="Bill Does" onchange="javascript:radio_or_text(2)"><br />
+	  Bill Doesn't: <input id="radio3" class="red_party" type="radio" name="race2_candidate" value="Bill Doesn't" onchange="javascript:radio_or_text(3)"><br />
+	  Write-In: <input id="text1" type="text" name="race2_candidate" oninput="javascript:radio_or_text(4)"/><br />
 	  <br /><input type="submit" value="Cast Vote!" />
 	</form>
       </div>

@@ -63,20 +63,47 @@ function party_vote(party) {
     $('.' + party + '_party').each(function(i) {$(this).prop('checked', true);});
 }
 
-function confirm_vote() {
-    var ballot_form = $("#ballot_form").serializeArray();
-    var c = '';
+function limit_options(index) {
+    if ($('input[type=checkbox]:checked').length > 2) {
+	$('#option' + index).attr('checked', false);
+    }
+}
+
+function radio_or_text(index) {
+    var writein = $('#text1').val();
+
+    if (index < 4) {
+	$('#text1').val('');
+    } else if (writein != '') {
+	$('input[type=radio]:checked').each(function(i){$(this).prop('checked', false);});
+    }
+}
+
+function confirm_vote(ballot_id) {
+    var ballot_form = $("#ballot_form"+ballot_id).serializeArray();
+    var count = 0;
+    var success = true;
+    var additional_options = false;
+
     $.each(ballot_form, function(i, field) {
-	if (field.name == "candidate") {
-	    c = field.value;
+	if (field.name == 'race1_candidate' &&
+	    ballot_id == 2) {
+	    if (!additional_options) {
+		additional_options = true;
+		count += 1;
+	    }
+	} else if (field.name != 'party' &&
+		   field.value != '') {
+	    count += 1;
 	}
     });
-    if (c != '') {
-	return confirm("Are you sure you want to vote for " +
-		       c + "?");
-    } else {
-	alert("You have not chosen a candidate");
+
+    if (count != 2) {
+	alert("You have not completed the ballot");
+	success = false;
     }
+
+    return success;
 }
 
 function upload_restore() {
