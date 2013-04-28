@@ -65,6 +65,25 @@ li {
     text-align: center;
 }
 
+
+.submitted_cb {
+    display: none;
+    margin-top: 60px;
+    text-align: center;
+}
+
+.hidden_candidate {
+    display: none;
+}
+
+.hidden_add_candidate {
+    display: none;
+}
+
+.hidden_race {
+    display: none;
+}
+
 .login_error {
     display: none;
     color: red;

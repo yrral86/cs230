@@ -195,3 +195,68 @@ function certify_election(ballot_id) {
     $('.submitted_ce').show();
     return false;
 }
+
+function create_ballot() {
+    $('.unsubmitted_cb').hide();
+    $('.submitted_cb').show();
+    return false;
+}
+
+var races = 0;
+function add_race() {
+    races += 1;
+    var race_fields = $('div.hidden_race').clone();
+    var race_dest = $('div.races');
+    var ac_div = $('div.hidden_add_candidate').clone();
+
+    race_fields.children().each(function(i) {
+	var t = $(this);
+	var n = t.attr('name');
+	if (n != undefined) {
+	    n = n.replace('X', races);
+	    t.attr('name', n);
+	}
+	n = t.attr('class');
+	if (n != undefined) {
+	    n = n.replace('X', races);
+	    t.attr('class', n);
+	}
+    });
+
+    ac_div.children().each(function(i) {
+	var t = $(this);
+	var n = t.attr('onclick');
+	if (n != undefined) {
+	    n = n.replace('X', races);
+	    t.attr('onclick', n);
+	}
+    });
+
+    race_dest.append(race_fields.html());
+    race_dest.append(ac_div.html());
+    add_candidate(races);
+
+    return false;
+}
+
+function add_candidate(race) {
+    var input = $('input[name=race' + race + '_candidate_count]');
+    var count = +input.val() + 1;
+    input.val(count);
+    var candidate = $('div.hidden_candidate').clone();
+    var candidate_dest = $('div.race' + race + '_candidates');
+
+    candidate.children().each(function(i) {
+	var t = $(this);
+	var n = t.attr('name');
+	if (n != undefined) {
+	    n = n.replace('X', race);
+	    n = n.replace('Y', count);
+	    t.attr('name', n);
+	}
+    });
+
+    candidate_dest.append(candidate.html());
+
+    return false;
+}

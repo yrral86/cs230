@@ -23,7 +23,36 @@
       <a class="not_logged" href="login.html">login</a>
       <a class="any_logged" href="logout.html">logout</a>
     </div>
-    <h1>Welcome to the Student Voting Center</h1>
-    <p>This is the Student Voting Center.  It is the center for voting as a student of Morgantown University.</p>
+    <div class="hidden_add_candidate">
+      <button type="button" onclick="add_candidate(X)">Add Candidate/Option</button><br /><br />
+    </div>
+    <div class="hidden_candidate">
+      Name: <input name="raceX_candidateY" /><br />
+      Party: <input name="raceX_candidateY_party" /><br />
+      <br />
+    </div>
+    <div class="hidden_race">
+      <input type="hidden" name="raceX_candidate_count" value="0" />
+      Race Name: <input type="text" name="raceX_name" /><br />
+      Selections allowed: <input type="text" name="raceX_selections" value="1" /><br />
+      Write-In allowed: <input type="checkbox" name="raceX_writein" /><br />
+      <br />
+      <div class="raceX_candidates">
+      </div>
+    </div>
+    <div class="unsubmitted_cb">
+      <h1>Create a ballot</h1>
+      <p>Please use the form below to set up the ballot for your election.</p>
+      <form action="create_ballot.html" onsubmit="return create_ballot();">
+	<button type="button" onclick="add_race()">Add Race/Issue</button>
+	<div class="races">
+
+	</div>
+	<input type="submit" value="Create" />
+      </form>
+    </div>
+    <div class="submitted_cb">
+      Your ballot has been created!
+    </div>
   </body>
 </html>
