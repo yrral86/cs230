@@ -6,5 +6,5 @@ Add other sample ballot types
     -checkbox (multiple options)
     -party
     -single vote
-backup/restore
-create ballot
+backup/restore (HSO)
+create ballot (EC)
