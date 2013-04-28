@@ -4,6 +4,8 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js">
     </script>
+    <script type="text/javascript" src="jquery.cookie.js">
+    </script>
     <script type="text/javascript" src="javascript.js">
     </script>
   </head>
@@ -13,7 +15,10 @@
       <a href="login.html">Login</a>
     </div>
     <h1>Login</h1>
-    <form action="login.html">
+    <div class="login_error">
+      Invalid username or password.
+    </div>
+    <form id="login_form" onsubmit="return fake_login();">
       <label for="username">Username:</label>
       <input type="text" name="username" />
       <br />

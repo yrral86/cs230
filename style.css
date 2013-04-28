@@ -32,3 +32,17 @@ li {
     margin-top: 60px;
     text-align: center;
 }
+
+.login_error {
+    display: none;
+    color: red;
+    margin: 10px;
+}
+
+a.student_logged {
+    display: none;
+}
+
+a.any_logged {
+    display: none;
+}

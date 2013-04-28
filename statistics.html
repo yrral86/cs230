@@ -4,16 +4,18 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js">
     </script>
+    <script type="text/javascript" src="jquery.cookie.js">
+    </script>
     <script type="text/javascript" src="javascript.js">
     </script>
   </head>
   <body>
     <div class="navigation">
       <a href="index.html">Home</a>
-      <a href="open_ballots.html">Open Ballots/Vote</a>
-      <a href="closed_ballots.html">Closed Ballots/View</a>
-      <a href="login.html">login</a>
-      <a href="logout.html">logout</a>
+      <a class="student_logged" href="open_ballots.html">Open Ballots/Vote</a>
+      <a class="student_logged" href="closed_ballots.html">Closed Ballots/View</a>
+      <a class="not_logged" href="login.html">login</a>
+      <a class="any_logged" href="logout.html">logout</a>
     </div>
     <h1>Sample Ballot <span id="ballot_number"></span> Statistics</h1>
     <h3>Results</h3>

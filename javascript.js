@@ -12,13 +12,40 @@ $(document).ready(function () {
 	$(".unsubmitted").hide();
 	$(".submitted").show();
     }
+
+    // fix links based on login status
+    var role = $.cookie('role');
+    if (role != null) {
+	show_all_links('a.any_logged');
+	hide_all('a.not_logged');
+	if (role == 'student') {
+	    show_all_links('a.student_logged');
+	} else if (role == 'hso') {
+	    show_all_links('a.hso_logged');
+	} else if (role == 'ec') {
+	    show_all_links('a.ec_logged');
+	}
+    } else {
+	if (!/index\.html/.test(document.location) &&
+	    !/login\.html/.test(document.location)) {
+	    document.location = "login.html";
+	}
+    }
 });
+
+function show_all_links(selector) {
+    $(selector).each(function(i) { $(this).show(); $(this).css('display', 'block'); });
+}
+
+function hide_all(selector) {
+    $(selector).each(function(i) { $(this).hide(); });
+}
 
 function confirm_vote() {
     var ballot_form = $("#ballot_form").serializeArray();
     var c = '';
     $.each(ballot_form, function(i, field) {
-	if (field.name="candidate") {
+	if (field.name == "candidate") {
 	    c = field.value;
 	}
     });
@@ -28,4 +55,49 @@ function confirm_vote() {
     } else {
 	alert("You have not chosen a candidate");
     }
+}
+
+function fake_login() {
+    var form = $('#login_form').serializeArray();
+    var username;
+    var password;
+    var error = false;
+
+    $.each(form, function(i, field) {
+	if (field.name == "username") {
+	    username = field.value;
+	} else if (field.name == "password") {
+	    password = field.value;
+	}
+    });
+
+    if (password != 'password') {
+	error = true;
+    } else {
+	if (username == 'student') {
+	    login_as('student');
+	} else if (username == 'hso') {
+	    login_as('hso');
+	} else if (username == 'ec') {
+	    login_as('ec');
+	} else {
+	    error = true;
+	}
+    }
+
+    if (error) {
+	$('.login_error').show();
+    } else {
+	document.location = "index.html";
+    }
+
+    return false;
+}
+
+function login_as(role) {
+    $.cookie('role', role);
+}
+
+function fake_logout() {
+    $.removeCookie('role');
 }
