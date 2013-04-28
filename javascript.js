@@ -5,20 +5,23 @@ function getURLParameter(name) {
 }
 
 $(document).ready(function () {
+    var location = document.location;
+    var index = /index\.html/.test(location);
+    var login = /login\.html/.test(location);
+    var add_com = /add_comissioner\.html/.test(location);
+
     var ballot_id = getURLParameter('ballot_id');
     if (ballot_id != 'null') {
 	$("#ballot_number").text(ballot_id);
+	if (add_com) {
+	    ac_select();
+	}
     } else {
 	$(".unsubmitted_ballot").hide();
 	$(".submitted_ballot").show();
     }
 
     // fix links based on login status and location
-    var location = document.location;
-    var index = /index\.html/.test(location);
-    var login = /login\.html/.test(location);
-
-
     if (!index) {
 	show_all_links('a.home_link');
     }
@@ -78,6 +81,16 @@ function upload_restore() {
     return false;
 }
 
+function submit_ac() {
+    var name = $('#fname').val() + ' ' + $('#lname').val();
+    var ballot = $('option:selected').text();
+    $('#ac_name').text(name);
+    $('#ac_ballot').text(ballot);
+    $('.unsubmitted_ac').hide();
+    $('.submitted_ac').show();
+    return false;
+}
+
 function fake_login() {
     var form = $('#login_form').serializeArray();
     var username;
@@ -121,4 +134,25 @@ function login_as(role) {
 
 function fake_logout() {
     $.removeCookie('role');
+}
+
+function invalidate(student_id) {
+    $('#student'+student_id+'_vote').html('<a href="javascript:revalidate(' +
+					  student_id + ');">Revalidate Vote</a>');
+}
+
+function revalidate(student_id) {
+    $('#student'+student_id+'_vote').html('<a href="javascript:invalidate(' +
+					  student_id + ');">Invalidate Vote</a>');
+}
+
+function remove_comissioner(ballot_id) {
+    $('#comissioner'+ballot_id+'_name').html('');
+    $('#comissioner'+ballot_id+'_actions').html('<a href="add_comissioner.html?ballot_id=' +
+						ballot_id + '">Add Comissioner</a>');
+}
+
+function ac_select() {
+    var b_id = getURLParameter('ballot_id');
+    $('#ballot' + b_id).attr('selected', true);
 }

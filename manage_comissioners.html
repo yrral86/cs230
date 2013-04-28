@@ -23,7 +23,27 @@
       <a class="not_logged" href="login.html">login</a>
       <a class="any_logged" href="logout.html">logout</a>
     </div>
-    <h1>Welcome to the Student Voting Center</h1>
-    <p>This is the Student Voting Center.  It is the center for voting as a student of Morgantown University.</p>
+    <h1>Manage Comissioners</h1>
+    <p>Please select a ballot below to edit the comissioner:</p>
+    <table class="ballot_list">
+      <tr>
+	<th>Ballot Name</th>
+	<th>Current Comissioner</th>
+	<th>End Time</th>
+	<th>Actions</th>
+      </tr>
+      <tr>
+	<td>Sample Ballot 1</td>
+	<td id="comissioner1_name">Comissioner 1</td>
+	<td>5/12/2013 11:59pm</td>
+	<td id="comissioner1_actions"><a href="javascript:remove_comissioner(1)">Remove Comissioner</a></td>
+      </tr>
+      <tr>
+	<td>Sample Ballot 2</td>
+	<td id="comissioner2_name">Comissioner 2</td>
+	<td>5/19/2013 11:59pm</td>
+	<td id="comissioner2_actions"><a href="javascript:remove_comissioner(2)">Remove Comissioner</a></td>
+      </tr>
+    </table>
   </body>
 </html>

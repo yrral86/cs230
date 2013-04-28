@@ -23,23 +23,36 @@
       <a class="not_logged" href="login.html">login</a>
       <a class="any_logged" href="logout.html">logout</a>
     </div>
-    <h1>Audit Elections</h1>
-    <p>Please select a ballot below to audit:</p>
-    <table class="ballot_list">
+    <h1>Audit Ballot</h1>
+    <p>Please select a vote to invalidate or revalidate:</p>
+    <table class="vote_list">
       <tr>
-	<th>Ballot Name</th>
-	<th>End Time</th>
+	<th>Student Name</th>
 	<th>Actions</th>
       </tr>
       <tr>
-	<td>Sample Ballot 1</td>
-	<td>5/12/2013 11:59pm</td>
-	<td><a href="audit.html?ballot_id=1">Audit Votes</a></td>
+	<td>Student 1</td>
+	<td id="student1_vote"><a href="javascript:invalidate(1);">Invalidate Vote</a></td>
       </tr>
       <tr>
-	<td>Sample Ballot 2</td>
-	<td>5/19/2013 11:59pm</td>
-	<td><a href="audit.html?ballot_id=2">Audit Votes</a></td>
+	<td>Student 2</td>
+	<td id="student2_vote"><a href="javascript:invalidate(2);">Invalidate Vote</a></td>
+      </tr>
+      <tr>
+	<td>Student 3</td>
+	<td id="student3_vote"><a href="javascript:invalidate(3);">Invalidate Vote</a></td>
+      </tr>
+      <tr>
+	<td>Student 4</td>
+	<td id="student4_vote"><a href="javascript:invalidate(4);">Invalidate Vote</a></td>
+      </tr>
+      <tr>
+	<td>Student 5</td>
+	<td id="student5_vote"><a href="javascript:invalidate(5);">Invalidate Vote</a></td>
+      </tr>
+      <tr>
+	<td>Student 6</td>
+	<td id="student6_vote"><a href="javascript:invalidate(6);">Invalidate Vote</a></td>
       </tr>
     </table>
   </body>
