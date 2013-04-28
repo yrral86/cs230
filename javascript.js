@@ -12,7 +12,7 @@ $(document).ready(function () {
 
     var ballot_id = getURLParameter('ballot_id');
     if (ballot_id != 'null') {
-	$("#ballot_number").text(ballot_id);
+	$("#ballot"+ballot_id).show();
 	if (add_com) {
 	    ac_select();
 	}
@@ -57,6 +57,10 @@ function show_all_links(selector) {
 
 function hide_all(selector) {
     $(selector).each(function(i) { $(this).hide(); });
+}
+
+function party_vote(party) {
+    $('.' + party + '_party').each(function(i) {$(this).prop('checked', true);});
 }
 
 function confirm_vote() {

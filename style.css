@@ -37,6 +37,10 @@ li {
     list-style-type: none;
 }
 
+.sample_ballot {
+    display: none;
+}
+
 .submitted_ballot {
     display: none;
     margin-top: 60px;
