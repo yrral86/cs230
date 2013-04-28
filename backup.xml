@@ -1,0 +1,40 @@
+<backup>
+  <last_update>2013-04-29</last_update>
+  <election>
+    <name>Election 1</name>
+    <comissioner>Tom Doe</comissioner>
+    <ballot>
+      <race>
+	<position>Student Body President</position>
+	<candidate>
+	  <name>John Doe</name>
+	  <votes>56</votes>
+	</candidate>
+	<candidate>
+	  <name>John Does</name>
+	  <votes>84</votes>
+	</candidate>
+	<candidate>
+	  <name>John Doesn't</name>
+	  <votes>62</votes>
+	</candidate>
+	<invalidated_votes>2</invalidated_votes>
+      </race>
+      <race>
+	<position>Student Body Treasurer</position>
+	<candidate>
+	  <name>Bill Doe</name>
+	  <votes>65</votes>
+	</candidate>
+	<candidate>
+	  <name>Bill Does</name>
+	  <votes>46</votes>
+	</candidate>
+	<candidate>
+	  <name>Bill Doesn't</name>
+	  <votes>98</votes>
+	</candidate>
+      </race>
+    </ballot>
+  </election>
+</backup>

@@ -27,7 +27,13 @@ li {
     list-style-type: none;
 }
 
-.submitted {
+.submitted_ballot {
+    display: none;
+    margin-top: 60px;
+    text-align: center;
+}
+
+.submitted_restore {
     display: none;
     margin-top: 60px;
     text-align: center;

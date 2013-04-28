@@ -23,7 +23,15 @@
       <a class="not_logged" href="login.html">login</a>
       <a class="any_logged" href="logout.html">logout</a>
     </div>
-    <h1>Welcome to the Student Voting Center</h1>
-    <p>This is the Student Voting Center.  It is the center for voting as a student of Morgantown University.</p>
+    <div class="unsubmitted_restore">
+      <h1>Restore from Backup</h1>
+      <form action="restore.html" onsubmit="return upload_restore();" enctype="multipart/form-data" method="post">
+	Select File: <input type="file" name="backup" /><br />
+	<input type="submit" value="Restore" />
+      </form>
+    </div>
+    <div class="submitted_restore">
+      The data has been restored.
+    </div>
   </body>
 </html>

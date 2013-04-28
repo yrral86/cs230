@@ -9,8 +9,8 @@ $(document).ready(function () {
     if (ballot_id != 'null') {
 	$("#ballot_number").text(ballot_id);
     } else {
-	$(".unsubmitted").hide();
-	$(".submitted").show();
+	$(".unsubmitted_ballot").hide();
+	$(".submitted_ballot").show();
     }
 
     // fix links based on login status and location
@@ -70,6 +70,12 @@ function confirm_vote() {
     } else {
 	alert("You have not chosen a candidate");
     }
+}
+
+function upload_restore() {
+    $('.unsubmitted_restore').hide();
+    $('.submitted_restore').show();
+    return false;
 }
 
 function fake_login() {
